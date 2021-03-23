@@ -6,7 +6,7 @@ function init() {
     var dropdownMenu = d3.select("#selDataset");
 
     // Using D3 library to read the samples.json file
-    d3.json("../samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         console.log(data);
         // accessing the patient ids through the key "names"
         var ids = data.names;
@@ -33,7 +33,7 @@ init();
 // creating a function for the dempgrapic panel
 // having a variable 'index', because this will reference the specific id selected in the dropdown menu and the index it relates to
 function demographic(index) {
-    d3.json("../samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
        
         // obtaining the metadata section
         var metadata = data.metadata;
@@ -60,7 +60,7 @@ function demographic(index) {
 // creating a function for the bar graph and the bubble chart.
 // will be using variable index again as this will relate to the selected id in the dropdown menu and reference the index of the object needed from the sampleData array
 function startingPlots(index){
-    d3.json("../samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
 
         // need to access the sample data section
         var sampleData = data.samples;
@@ -155,7 +155,7 @@ function startingPlots(index){
 // Creating a function for the advanced challenge
 function extra(index){
 
-    d3.json("../samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
         console.log(data);
         
         // accessing the metadata section as this is where the required key wfreq is located for each subject
@@ -261,7 +261,7 @@ function optionChanged(idSelection) {
         // so the dictionary needs to be accessed through the idndex, then find id with .id
         // this gets id for index 0
 
-    d3.json("../samples.json").then((data) => {
+    d3.json("samples.json").then((data) => {
 
         // need to access the sample data section
         var sampleData = data.samples;
